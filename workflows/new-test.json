@@ -1,0 +1,140 @@
+{
+  "updatedAt": "2026-06-17T05:28:40.242Z",
+  "createdAt": "2026-06-17T05:27:11.757Z",
+  "id": "4cywGQTkXwokCQje",
+  "name": "New -Test",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3e30abcb-962a-4fb8-8d2a-5cd81fb1c610",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f821794b-704b-424d-92ca-8b366ebe86b8",
+      "name": "When chat message received",
+      "webhookId": "7ac256cb-7a04-4446-8cde-52ec2a552012"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "What is governance ",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "798d110d-cbb3-4fef-8da4-cc0b1cfb8c93",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        288,
+        208
+      ],
+      "id": "beb02a78-579e-4950-b542-70239bfda214",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "535mhiaNdaHFFP7U",
+          "name": "Edwin"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "e2b51d7e-fa47-4186-b1b9-9a110e99b2ac",
+  "activeVersionId": null,
+  "versionCounter": 9,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-06-17T05:27:11.759Z",
+      "createdAt": "2026-06-17T05:27:11.759Z",
+      "role": "workflow:owner",
+      "workflowId": "4cywGQTkXwokCQje",
+      "projectId": "DGOxBB0EAKjucbcz",
+      "project": {
+        "updatedAt": "2026-02-19T17:09:04.960Z",
+        "createdAt": "2026-02-19T16:44:33.941Z",
+        "id": "DGOxBB0EAKjucbcz",
+        "name": "Admin n8n <admin@n8n.iohealth.im>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "25a4375d-9192-44f3-8669-208ce86b1a29"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
