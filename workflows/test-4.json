@@ -1,0 +1,140 @@
+{
+  "updatedAt": "2026-06-18T05:57:21.662Z",
+  "createdAt": "2026-06-18T05:56:27.632Z",
+  "id": "bTthwZ0CNUcPz7ho",
+  "name": "Test 4",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -96,
+        0
+      ],
+      "id": "0d58380d-4340-4bcc-a10f-1d6d98c886df",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        112,
+        0
+      ],
+      "id": "9ccfb175-c6e3-45cb-9c42-111508f64457",
+      "name": "When chat message received",
+      "webhookId": "45054413-7fc4-4470-a291-604029ef79d7"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "What is RAG",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        320,
+        0
+      ],
+      "id": "c5f8fa2c-d40f-41c9-a47d-ad464e23d2ba",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        192,
+        208
+      ],
+      "id": "adc83424-7643-40cd-9f6d-33399dacac8c",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "535mhiaNdaHFFP7U",
+          "name": "Edwin"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "fd8ae1a0-ceff-4c30-beaf-a3bce6a5256c",
+  "activeVersionId": null,
+  "versionCounter": 10,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-06-18T05:56:27.634Z",
+      "createdAt": "2026-06-18T05:56:27.634Z",
+      "role": "workflow:owner",
+      "workflowId": "bTthwZ0CNUcPz7ho",
+      "projectId": "DGOxBB0EAKjucbcz",
+      "project": {
+        "updatedAt": "2026-02-19T17:09:04.960Z",
+        "createdAt": "2026-02-19T16:44:33.941Z",
+        "id": "DGOxBB0EAKjucbcz",
+        "name": "Admin n8n <admin@n8n.iohealth.im>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "25a4375d-9192-44f3-8669-208ce86b1a29"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
