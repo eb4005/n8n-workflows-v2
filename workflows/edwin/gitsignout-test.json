@@ -1,0 +1,55 @@
+{
+  "updatedAt": "2026-06-18T10:41:26.635Z",
+  "createdAt": "2026-06-18T10:14:34.747Z",
+  "id": "NdyImpgAsNCCsywG",
+  "name": "GITSIGNOUT-Test",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "308d7c6b-9271-4e64-98d9-b52a6eb0f618",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "e483c215-f573-4579-b0f3-c5711e75e2b3",
+  "activeVersionId": null,
+  "versionCounter": 4,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-06-18T10:14:34.748Z",
+      "createdAt": "2026-06-18T10:14:34.748Z",
+      "role": "workflow:owner",
+      "workflowId": "NdyImpgAsNCCsywG",
+      "projectId": "DGOxBB0EAKjucbcz",
+      "project": {
+        "updatedAt": "2026-02-19T17:09:04.960Z",
+        "createdAt": "2026-02-19T16:44:33.941Z",
+        "id": "DGOxBB0EAKjucbcz",
+        "name": "Admin n8n <admin@n8n.iohealth.im>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "25a4375d-9192-44f3-8669-208ce86b1a29"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
