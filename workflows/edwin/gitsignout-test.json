@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T10:57:24.364Z",
+  "updatedAt": "2026-06-18T12:28:51.527Z",
   "createdAt": "2026-06-18T10:14:34.747Z",
   "id": "NdyImpgAsNCCsywG",
   "name": "GITSIGNOUT-Test",
@@ -7,17 +7,6 @@
   "active": false,
   "isArchived": false,
   "nodes": [
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "308d7c6b-9271-4e64-98d9-b52a6eb0f618",
-      "name": "When clicking ‘Execute workflow’"
-    },
     {
       "parameters": {
         "options": {}
@@ -34,9 +23,9 @@
     },
     {
       "parameters": {
-        "promptType": "define",
-        "text": "What is LLM",
-        "options": {}
+        "options": {
+          "systemMessage": "You are a healthcare expert"
+        }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
@@ -55,8 +44,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1,
       "position": [
-        432,
-        96
+        368,
+        192
       ],
       "id": "b863d1b8-d319-46f3-a234-d029f41bbf40",
       "name": "Groq Chat Model",
@@ -69,17 +58,6 @@
     }
   ],
   "connections": {
-    "When clicking ‘Execute workflow’": {
-      "main": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "When chat message received": {
       "main": [
         [
@@ -112,9 +90,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "fd730b02-1728-45a7-aa0e-bce3d83b661b",
+  "versionId": "9fe56a3e-56ee-4c9e-8e3f-96347cf5d65e",
   "activeVersionId": null,
-  "versionCounter": 11,
+  "versionCounter": 20,
   "triggerCount": 0,
   "shared": [
     {
