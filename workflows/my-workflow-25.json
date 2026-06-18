@@ -1,0 +1,445 @@
+{
+  "updatedAt": "2026-06-11T07:11:25.275Z",
+  "createdAt": "2026-06-10T10:59:52.234Z",
+  "id": "wwWrT0946Bv92wsG",
+  "name": "My workflow 25",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "92403cd1-081a-4d74-a61f-289c850baa02",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"patient_id\": \"P1001\",\n  \"insurance_status\": \"active\",\n  \"pre_auth_required\": false,\n  \"pre_auth_available\": true\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        -128
+      ],
+      "id": "a1984740-d952-4737-951d-937086966480",
+      "name": "INsurance"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"patient_id\": \"P1001\",\n  \"name\": \"Sarah\",\n  \"age\": 72,\n  \"condition\": \"Hypertension follow-up\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        -272
+      ],
+      "id": "7518cfd1-97b0-4dda-bab8-0ec34e95253f",
+      "name": "Details"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "patient_id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        512,
+        -192
+      ],
+      "id": "f3d4b520-07d2-47c4-9879-ff64ab920102",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"patient_id\": \"P1001\",\n  \"troponin\": \"normal\",\n  \"oxygen_saturation\": 98,\n  \"blood_pressure\": \"180/110\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        112
+      ],
+      "id": "d11c8775-5d1e-4a0c-9762-fdc6f57e9670",
+      "name": "Lab"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"patient_id\": \"P1001\",\n  \"ticket_priority\": \"low\",\n  \"ticket_status\": \"open\",\n  \"issue\": \"Patient needs doctor follow-up\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        288
+      ],
+      "id": "4932f1b4-915e-4f97-8ddd-12a18eb773dc",
+      "name": "Ticket"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "patient_id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        736,
+        -48
+      ],
+      "id": "af1b7c73-ff6c-429f-b6a4-ee986e05bff5",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "patient_id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1040,
+        -32
+      ],
+      "id": "7499aa05-ef73-40c4-b488-a69dadfa4e57",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "6fb681fc-94f5-4ba1-9c86-a2479c59960f",
+              "leftValue": "={{ $json.troponin }}",
+              "rightValue": "high",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "ae153eab-f6e3-4dc1-a754-4fd797c1498d",
+              "leftValue": "={{ $json.oxygen_saturation }}",
+              "rightValue": 90,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "ef8611db-ea63-4e06-b1e5-15cd5af2eaec",
+              "leftValue": "={{ $json.ticket_priority }}",
+              "rightValue": "urgent",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1248,
+        -32
+      ],
+      "id": "67a2c8e6-c33f-4e72-b20f-0f745c33c6b1",
+      "name": "Emergency"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "f4094797-5e93-4b67-abba-3e88c3c25495",
+              "leftValue": "={{ $json.pre_auth_required }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "3146348d-207a-4f54-902e-e14b1d05511a",
+              "leftValue": "={{ $json.pre_auth_available }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1536,
+        208
+      ],
+      "id": "9b349e27-3fee-49e2-9ed2-9d664e2cb823",
+      "name": "BIlling Review",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "8218e1aa-8a3c-460a-8c4a-2710dc1caada",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1744,
+        304
+      ],
+      "id": "85641adb-56c3-4d8d-9d69-8d2ba37a49e3",
+      "name": "Doctor"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"route\": \"Auto Close\",\n  \"status\": \"Completed\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1952,
+        400
+      ],
+      "id": "70e5f097-9abd-437a-9eef-af0ed3874b30",
+      "name": "Auto Close"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Details",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "INsurance",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Lab",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ticket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Details": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "INsurance": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lab": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ticket": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Emergency",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Emergency": {
+      "main": [
+        [],
+        [
+          {
+            "node": "BIlling Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BIlling Review": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Doctor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doctor": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Auto Close",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "013e35bf-f67f-41c6-a345-4dc127afcd1a",
+  "activeVersionId": null,
+  "versionCounter": 156,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-06-10T10:59:52.235Z",
+      "createdAt": "2026-06-10T10:59:52.235Z",
+      "role": "workflow:owner",
+      "workflowId": "wwWrT0946Bv92wsG",
+      "projectId": "DGOxBB0EAKjucbcz",
+      "project": {
+        "updatedAt": "2026-02-19T17:09:04.960Z",
+        "createdAt": "2026-02-19T16:44:33.941Z",
+        "id": "DGOxBB0EAKjucbcz",
+        "name": "Admin n8n <admin@n8n.iohealth.im>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "25a4375d-9192-44f3-8669-208ce86b1a29"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
