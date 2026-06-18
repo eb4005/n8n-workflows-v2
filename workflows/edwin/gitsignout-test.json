@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T10:41:26.635Z",
+  "updatedAt": "2026-06-18T10:57:24.364Z",
   "createdAt": "2026-06-18T10:14:34.747Z",
   "id": "NdyImpgAsNCCsywG",
   "name": "GITSIGNOUT-Test",
@@ -17,19 +17,104 @@
       ],
       "id": "308d7c6b-9271-4e64-98d9-b52a6eb0f618",
       "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "e2479b67-59bf-4707-8f65-56db824160f2",
+      "name": "When chat message received",
+      "webhookId": "66601f01-1f79-40f0-a415-701c84a95419"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "What is LLM",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "e29d3996-d0a3-4704-a580-eb8c1cb059a7",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        432,
+        96
+      ],
+      "id": "b863d1b8-d319-46f3-a234-d029f41bbf40",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "535mhiaNdaHFFP7U",
+          "name": "Edwin"
+        }
+      }
     }
   ],
-  "connections": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
   "staticData": null,
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "pinData": {},
-  "versionId": "e483c215-f573-4579-b0f3-c5711e75e2b3",
+  "versionId": "fd730b02-1728-45a7-aa0e-bce3d83b661b",
   "activeVersionId": null,
-  "versionCounter": 4,
+  "versionCounter": 11,
   "triggerCount": 0,
   "shared": [
     {
