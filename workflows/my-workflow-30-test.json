@@ -1,0 +1,55 @@
+{
+  "updatedAt": "2026-06-18T06:04:59.121Z",
+  "createdAt": "2026-06-18T06:04:59.121Z",
+  "id": "2ZLMxWH22ZpmA7vc",
+  "name": "My workflow 30- Test",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8595301f-f7a6-4be7-aa98-69dc974b08b2",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "97f4aad0-c42c-42f0-ac1d-d83387dbb62c",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-06-18T06:04:59.122Z",
+      "createdAt": "2026-06-18T06:04:59.122Z",
+      "role": "workflow:owner",
+      "workflowId": "2ZLMxWH22ZpmA7vc",
+      "projectId": "DGOxBB0EAKjucbcz",
+      "project": {
+        "updatedAt": "2026-02-19T17:09:04.960Z",
+        "createdAt": "2026-02-19T16:44:33.941Z",
+        "id": "DGOxBB0EAKjucbcz",
+        "name": "Admin n8n <admin@n8n.iohealth.im>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "25a4375d-9192-44f3-8669-208ce86b1a29"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
