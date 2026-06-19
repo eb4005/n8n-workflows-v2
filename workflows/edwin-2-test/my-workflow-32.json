@@ -47,8 +47,8 @@
         "options": {}
       },
       "position": [
-        32,
-        208
+        160,
+        256
       ],
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1
@@ -94,11 +94,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "ibbZwVQdxN0BsBsn",
-    "activeVersionId": "c56642ee-86e8-498f-a096-fb7ae22e7b11",
-    "versionName": "Version c56642ee",
+    "activeVersionId": "54bb38e5-41e8-4f8a-aba8-c69579969dcf",
+    "versionName": "Version 54bb38e5-2nd",
     "versionDescription": "",
-    "checksum": "f1870c4a07423ebabeec926fbdc536b302de69133fa87244b591c3fcfe294abc",
+    "checksum": "071ee84c170c40c3c01c90428cea76e85658c8c586f500b86c603e609cfead97",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-19T15:40:25.909Z"
+    "syncedAt": "2026-06-19T15:42:33.959Z"
   }
 }
