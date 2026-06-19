@@ -52,9 +52,68 @@
       ],
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1
+    },
+    {
+      "id": "58738b66-fe50-4f38-9d27-8a3614a6ee70",
+      "name": "Edit Fields",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "edde3cdc-86be-4e9d-b659-6a0cb1b8d9df",
+              "name": "",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        512,
+        0
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "c9c1a439-8028-4cf7-8060-4e5c07a53fb8",
+      "name": "Code in Python",
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "# Loop over input items and add a new field called 'my_new_field' to the JSON of each one\nfor item in _items:\n  item[\"json\"][\"my_new_field\"] = 1\nreturn _items"
+      },
+      "position": [
+        720,
+        0
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
     }
   ],
   "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Edit Fields",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Code in Python",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "Groq Chat Model": {
       "ai_languageModel": [
         [
@@ -94,11 +153,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "ibbZwVQdxN0BsBsn",
-    "activeVersionId": "54bb38e5-41e8-4f8a-aba8-c69579969dcf",
-    "versionName": "Version 54bb38e5-2nd",
+    "activeVersionId": "3c44318d-5526-458f-8ce2-a63efb0b8138",
+    "versionName": "Version 3c44318d a lot done ",
     "versionDescription": "",
-    "checksum": "071ee84c170c40c3c01c90428cea76e85658c8c586f500b86c603e609cfead97",
+    "checksum": "5ea891f820ab5cf3717d1754a9eb32981d05683d34f18c98848ef3d04917763d",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-19T15:42:33.959Z"
+    "syncedAt": "2026-06-19T16:18:46.284Z"
   }
 }
