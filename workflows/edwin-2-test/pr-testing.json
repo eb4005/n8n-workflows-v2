@@ -45,59 +45,14 @@
         "options": {}
       },
       "position": [
-        176,
-        224
+        80,
+        208
       ],
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1
-    },
-    {
-      "id": "da919bf8-756a-4ca5-be97-ce44c39bc375",
-      "name": "Filter",
-      "parameters": {
-        "conditions": {
-          "combinator": "and",
-          "conditions": [
-            {
-              "id": "95a5f442-392b-4159-82b3-e59946e86727",
-              "leftValue": "",
-              "operator": {
-                "name": "filter.operator.equals",
-                "operation": "equals",
-                "type": "string"
-              },
-              "rightValue": ""
-            }
-          ],
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 3
-          }
-        },
-        "options": {}
-      },
-      "position": [
-        560,
-        0
-      ],
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2.3
     }
   ],
   "connections": {
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "index": 0,
-            "node": "Filter",
-            "type": "main"
-          }
-        ]
-      ]
-    },
     "Groq Chat Model": {
       "ai_languageModel": [
         [
@@ -137,11 +92,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "191MvFP2KT5EopNq",
-    "activeVersionId": "9e305abc-1cd0-44a1-aa52-af2a8c35f7e5",
-    "versionName": "Version 9e305abc 2nd change",
+    "activeVersionId": "c1ce46fa-cf3a-4d6e-a002-448aca091981",
+    "versionName": "Version c1ce46fa-Test 1",
     "versionDescription": "",
-    "checksum": "b45043fe24e616b96d163fd9e7644522fe63ef11437203039c1589004ba9acde",
+    "checksum": "a0156e47408b0dcdab7a01a35b68b23c12faba9303659650e01badebc636a06f",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-20T18:04:03.167Z"
+    "syncedAt": "2026-06-20T18:02:52.057Z"
   }
 }
