@@ -177,6 +177,51 @@
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
+    },
+    {
+      "id": "791149ee-b4fb-4cad-8c9f-774387cb3551",
+      "name": "Merge",
+      "parameters": {},
+      "position": [
+        416,
+        0
+      ],
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2
+    },
+    {
+      "id": "0e1ef828-18b3-4fc8-b766-e335d246535c",
+      "name": "If2",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "67cdb608-eaf6-4939-8442-b9729446aac6",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        624,
+        0
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
@@ -226,7 +271,14 @@
     },
     "If1": {
       "main": [
-        []
+        [],
+        [
+          {
+            "index": 0,
+            "node": "Merge",
+            "type": "main"
+          }
+        ]
       ]
     },
     "Loop Over Items": {
@@ -242,6 +294,17 @@
           {
             "index": 0,
             "node": "Replace Me",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "If2",
             "type": "main"
           }
         ]
@@ -284,11 +347,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "prsbt630oEaOxYAE",
-    "activeVersionId": "766c7839-6a77-47b9-9778-3993ef371e72",
-    "versionName": "Version 766c7839-2",
+    "activeVersionId": "8ab625b5-b146-4187-8812-37a39705dc5d",
+    "versionName": "Version 8ab625b5-3",
     "versionDescription": "",
-    "checksum": "b5682a879b63e0b8df87467d1691b131eac7f3686de4132c49412f843dc8105a",
+    "checksum": "28b3daceca5fa95cdada91d2a33a63d340461031660d6f1869fe337d749485f6",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-20T21:46:43.017Z"
+    "syncedAt": "2026-06-20T21:47:31.937Z"
   }
 }
