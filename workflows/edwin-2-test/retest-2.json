@@ -118,6 +118,31 @@
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
+    },
+    {
+      "id": "01f64e19-b4dc-47f8-b1c3-e98133d16113",
+      "name": "Loop Over Items",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        1136,
+        -128
+      ],
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3
+    },
+    {
+      "id": "787119bc-0052-434e-87fc-42a2c9da1f91",
+      "name": "Replace Me",
+      "parameters": {},
+      "placeholder": true,
+      "position": [
+        1344,
+        80
+      ],
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1
     }
   ],
   "connections": {
@@ -154,6 +179,40 @@
         ]
       ]
     },
+    "If": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Loop Over Items",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "index": 0,
+            "node": "Replace Me",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Loop Over Items",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "Schedule Trigger": {
       "main": [
         [
@@ -180,11 +239,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "jMcqgvdhHiif0yKq",
-    "activeVersionId": "652a01e2-aa92-4516-8eb7-0a594d380ae9",
-    "versionName": "Version 652a01e2 testing for 2 pr",
+    "activeVersionId": "f7bdd24c-34eb-4773-95b8-cb0df899aee9",
+    "versionName": "Version f7bdd24c 3",
     "versionDescription": "",
-    "checksum": "98c7b7166f058a57d94bb2bfb1347badf975a12ebbf190b556057cef90cf605c",
+    "checksum": "529be0efcc72fa3c48d5a247925c3d150d5af01c4460da014df85ce348c4697d",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-20T18:48:29.172Z"
+    "syncedAt": "2026-06-20T18:54:20.207Z"
   }
 }
