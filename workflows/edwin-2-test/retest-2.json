@@ -1,0 +1,145 @@
+{
+  "name": "Retest 2",
+  "nodes": [
+    {
+      "id": "33a4429b-3d2f-42e5-b27e-cab5df12e59e",
+      "name": "Schedule Trigger",
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "position": [
+        160,
+        -32
+      ],
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "baca5efc-16da-4548-a27d-27e29dabd134",
+      "name": "AI Agent",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        368,
+        -32
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "credentials": {
+        "groqApi": {
+          "id": "535mhiaNdaHFFP7U",
+          "name": "Edwin"
+        }
+      },
+      "id": "1c649352-7e28-4e97-83c6-792ee47d46cf",
+      "name": "Groq Chat Model",
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "position": [
+        336,
+        192
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1
+    },
+    {
+      "id": "94c660a5-31c5-4d94-bfec-d6561c7cd8cb",
+      "name": "Filter",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "95a5f442-392b-4159-82b3-e59946e86727",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        720,
+        -32
+      ],
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3
+    }
+  ],
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Filter",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": {},
+  "tags": [],
+  "_cortexGitSync": {
+    "instance": "n8n-automation-test3.iohealth.com",
+    "workflowId": "jMcqgvdhHiif0yKq",
+    "activeVersionId": "df18de53-d863-4af3-9c81-54ae5527d9ce",
+    "versionName": "Version df18de53 test 1 new",
+    "versionDescription": "",
+    "checksum": "98c6352b6ce9855c397d9bd2b6405ccd7be21e4ceb087df73aa5a951ee8cc82f",
+    "syncedBy": "eb4005",
+    "syncedAt": "2026-06-20T18:47:11.583Z"
+  }
+}
