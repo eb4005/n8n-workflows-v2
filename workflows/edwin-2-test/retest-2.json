@@ -84,6 +84,40 @@
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
+    },
+    {
+      "id": "599ebfef-9587-4765-987b-6634eb681222",
+      "name": "If",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "13e5d98f-429a-4f80-a2b0-bb12251f227c",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        928,
+        -32
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
@@ -93,6 +127,17 @@
           {
             "index": 0,
             "node": "Filter",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "If",
             "type": "main"
           }
         ]
@@ -135,11 +180,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "jMcqgvdhHiif0yKq",
-    "activeVersionId": "df18de53-d863-4af3-9c81-54ae5527d9ce",
-    "versionName": "Version df18de53 test 1 new",
+    "activeVersionId": "652a01e2-aa92-4516-8eb7-0a594d380ae9",
+    "versionName": "Version 652a01e2 testing for 2 pr",
     "versionDescription": "",
-    "checksum": "98c6352b6ce9855c397d9bd2b6405ccd7be21e4ceb087df73aa5a951ee8cc82f",
+    "checksum": "98c7b7166f058a57d94bb2bfb1347badf975a12ebbf190b556057cef90cf605c",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-20T18:47:11.583Z"
+    "syncedAt": "2026-06-20T18:48:29.172Z"
   }
 }
