@@ -1,0 +1,102 @@
+{
+  "name": "PR Testing",
+  "nodes": [
+    {
+      "id": "dd8233ea-4dcb-4254-bf1c-259ed3d535b4",
+      "name": "Schedule Trigger",
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "c986a75a-cce9-47c5-9565-441cc4ef4729",
+      "name": "AI Agent",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        208,
+        0
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "credentials": {
+        "groqApi": {
+          "id": "535mhiaNdaHFFP7U",
+          "name": "Edwin"
+        }
+      },
+      "id": "9d405c72-4b7d-4bb9-b9eb-fe7acfc129c5",
+      "name": "Groq Chat Model",
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "position": [
+        80,
+        208
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1
+    }
+  ],
+  "connections": {
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": [],
+  "_cortexGitSync": {
+    "instance": "n8n-automation-test3.iohealth.com",
+    "workflowId": "191MvFP2KT5EopNq",
+    "activeVersionId": "c1ce46fa-cf3a-4d6e-a002-448aca091981",
+    "versionName": "Version c1ce46fa-Test 1",
+    "versionDescription": "",
+    "checksum": "a0156e47408b0dcdab7a01a35b68b23c12faba9303659650e01badebc636a06f",
+    "syncedBy": "eb4005",
+    "syncedAt": "2026-06-20T18:02:52.057Z"
+  }
+}
