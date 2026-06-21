@@ -47,8 +47,8 @@
         "options": {}
       },
       "position": [
-        -416,
-        224
+        -304,
+        256
       ],
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1
@@ -120,6 +120,74 @@
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
+    },
+    {
+      "id": "5566a62e-0bae-4cde-97b6-43c378cae3ec",
+      "name": "Filter2",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "98b0a378-5dfe-4ba8-a804-6ea2c5a44bd7",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        -96,
+        153
+      ],
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3
+    },
+    {
+      "id": "94b8a45d-3324-44e1-bf5d-cb9a5dff8027",
+      "name": "If",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "667d3361-6d6a-41c5-a355-9fa2ad3f7024",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        544,
+        -16
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
@@ -140,6 +208,17 @@
           {
             "index": 0,
             "node": "Filter1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "If",
             "type": "main"
           }
         ]
@@ -182,11 +261,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "zjjM9UKF2zyoJ3hR",
-    "activeVersionId": "e300f986-c0a1-436d-8b32-421e22ddc1aa",
-    "versionName": "Version e300f986 2",
-    "versionDescription": "moved the nodes ",
-    "checksum": "6d6f7429adc53342eed79e1b51187e73308425d4b82303f353720e254a685d91",
+    "activeVersionId": "2686842a-11ab-4ffb-a549-d46680608cda",
+    "versionName": "Version 2686842a 2",
+    "versionDescription": "SO a lot of other nodes were added and changes have been made\n",
+    "checksum": "309a3573796d1d512a77ee41afa5f9ab9b073adc20f2b469f2b014295ad54944",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-21T18:07:26.700Z"
+    "syncedAt": "2026-06-21T19:19:05.260Z"
   }
 }
