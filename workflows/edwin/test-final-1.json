@@ -52,9 +52,54 @@
       ],
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1
+    },
+    {
+      "id": "7c2e86e3-88ad-4667-b461-64c48f8ab581",
+      "name": "Filter",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "fe7c6350-a6ed-41ec-8244-48d103afa586",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        608,
+        -32
+      ],
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Filter",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "Groq Chat Model": {
       "ai_languageModel": [
         [
@@ -94,11 +139,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "fHfQF2WPzp3Wim4p",
-    "activeVersionId": "44acf729-3619-4865-8ae9-e64091a530ae",
-    "versionName": "Version 44acf729 2",
+    "activeVersionId": "f71c00d3-68ce-4c3e-921a-cb1d888579c0",
+    "versionName": "Version f71c00d3 v3",
     "versionDescription": "",
-    "checksum": "3669d24d7634ee28f8943aaf46948244fa3106f8957aa5d23ec8c2400aef9032",
+    "checksum": "3dac7416fae059dd666e6dc5f5c23bb539f3e7ddccd150579b937fdd81435554",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-21T16:19:58.156Z"
+    "syncedAt": "2026-06-21T16:21:53.355Z"
   }
 }
