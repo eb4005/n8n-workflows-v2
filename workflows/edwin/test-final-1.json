@@ -27,8 +27,8 @@
         "text": "Define groq"
       },
       "position": [
-        208,
-        0
+        256,
+        -32
       ],
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1
@@ -94,11 +94,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "fHfQF2WPzp3Wim4p",
-    "activeVersionId": "7da92dc8-c3c0-4f5f-aaa5-47c6d9faa2e0",
-    "versionName": "Version 7da92dc8 1",
+    "activeVersionId": "44acf729-3619-4865-8ae9-e64091a530ae",
+    "versionName": "Version 44acf729 2",
     "versionDescription": "",
-    "checksum": "8bfdd34926f8c89fee9edb82b6a1cc37044eaa640f051a969079186b3d95db13",
+    "checksum": "3669d24d7634ee28f8943aaf46948244fa3106f8957aa5d23ec8c2400aef9032",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-21T16:18:30.996Z"
+    "syncedAt": "2026-06-21T16:19:58.156Z"
   }
 }
