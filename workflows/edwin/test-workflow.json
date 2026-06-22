@@ -1,5 +1,5 @@
 {
-  "name": "test workflow",
+  "name": "Test Workflow",
   "nodes": [
     {
       "id": "62161938-6f7d-487c-bf89-19f721f8d50f",
@@ -93,10 +93,35 @@
       },
       "position": [
         800,
-        -32
+        -112
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
+    },
+    {
+      "id": "6558c71a-f3d9-49c5-9ced-00622925ac1b",
+      "name": "Loop Over Items",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        1008,
+        -208
+      ],
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3
+    },
+    {
+      "id": "38c2582b-4270-4332-94bd-813d0b3502ab",
+      "name": "Replace Me",
+      "parameters": {},
+      "placeholder": true,
+      "position": [
+        1216,
+        0
+      ],
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1
     }
   ],
   "connections": {
@@ -135,7 +160,36 @@
     },
     "If": {
       "main": [
-        []
+        [
+          {
+            "index": 0,
+            "node": "Loop Over Items",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "index": 0,
+            "node": "Replace Me",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Loop Over Items",
+            "type": "main"
+          }
+        ]
       ]
     },
     "Schedule Trigger": {
@@ -166,11 +220,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "grBNSjMsNLtanhsi",
-    "activeVersionId": "bdad8468-fe59-4f50-99f0-a8c5e93bde4b",
-    "versionName": "Version bdad8468 v3",
+    "activeVersionId": "9cc25894-7cf3-499d-bad9-e10217cbf7fb",
+    "versionName": "Version 9cc25894",
     "versionDescription": "",
-    "checksum": "aa9c2b030c882cbb85fff53f86a577a7925699c6eadf4ea8b311282849de83d7",
+    "checksum": "ca76077dd4218500d602b97a34bdd07e3f747afd030808ed8278c8aaf30a768d",
+    "active": true,
+    "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T07:31:04.010Z"
+    "syncedAt": "2026-06-22T08:35:03.628Z"
   }
 }
