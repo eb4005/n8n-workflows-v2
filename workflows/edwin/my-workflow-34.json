@@ -156,6 +156,40 @@
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
+    },
+    {
+      "id": "1d8b123b-0739-412d-855c-16753d0b4c50",
+      "name": "Filter1",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "cee81cc4-6033-4c7c-a5af-09d939c449bc",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        688,
+        -64
+      ],
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
@@ -176,6 +210,17 @@
           {
             "index": 0,
             "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Filter1",
             "type": "main"
           }
         ]
@@ -260,13 +305,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "6PTzsC5F5dVeetpA",
-    "activeVersionId": "ce2dee8b-3a5c-42bf-b2dc-81d73ed5762d",
-    "versionName": "Version ce2dee8b",
-    "versionDescription": "There is a node that was added to remerge and also if node was added and then the groq chat model is also added ",
-    "checksum": "8a88621293f137e6e3fc3912ac926f1490b063329511ce334c23426a04307482",
+    "activeVersionId": "379ac527-c531-42d9-b4fc-ec7a7809302c",
+    "versionName": "Version 379ac527",
+    "versionDescription": "",
+    "checksum": "0f8b25a438586f3b370d13de77a1337d0e7258b97c400cafd83adf90cd9691ed",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T12:10:29.174Z"
+    "syncedAt": "2026-06-22T12:24:28.028Z"
   }
 }
