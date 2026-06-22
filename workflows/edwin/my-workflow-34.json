@@ -151,8 +151,8 @@
         "options": {}
       },
       "position": [
-        368,
-        -160
+        480,
+        -64
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
@@ -260,13 +260,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "6PTzsC5F5dVeetpA",
-    "activeVersionId": "690ba9e5-0f9e-4f69-8fb5-313b5b8aa7bd",
-    "versionName": "Version 690ba9e5",
-    "versionDescription": "A lot of changes has been made and this is the latest change being made ",
-    "checksum": "20744833a3928cfd5a3667f0d1344ad5d3353efbb395f6ef364710d35ec2d952",
+    "activeVersionId": "ce2dee8b-3a5c-42bf-b2dc-81d73ed5762d",
+    "versionName": "Version ce2dee8b",
+    "versionDescription": "There is a node that was added to remerge and also if node was added and then the groq chat model is also added ",
+    "checksum": "8a88621293f137e6e3fc3912ac926f1490b063329511ce334c23426a04307482",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T10:45:36.543Z"
+    "syncedAt": "2026-06-22T12:10:29.174Z"
   }
 }
