@@ -93,7 +93,7 @@
       },
       "position": [
         -208,
-        96
+        -16
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
@@ -106,7 +106,7 @@
       },
       "position": [
         0,
-        0
+        -32
       ],
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3
@@ -117,11 +117,45 @@
       "parameters": {},
       "placeholder": true,
       "position": [
-        208,
-        208
+        240,
+        144
       ],
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1
+    },
+    {
+      "id": "53825e1f-08ff-4ebb-93ea-14cd3555588f",
+      "name": "Filter",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "35d54907-baa0-43a7-86c0-f2b270f54a1a",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        320,
+        -160
+      ],
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
@@ -171,7 +205,13 @@
     },
     "Loop Over Items": {
       "main": [
-        [],
+        [
+          {
+            "index": 0,
+            "node": "Filter",
+            "type": "main"
+          }
+        ],
         [
           {
             "index": 0,
@@ -218,13 +258,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "6PTzsC5F5dVeetpA",
-    "activeVersionId": "1807fc73-a8bf-43ce-b476-daef3609c4e7",
-    "versionName": "Version 1807fc73",
+    "activeVersionId": "1a420f44-968b-4a15-b8f4-e4153696625f",
+    "versionName": "Version 1a420f44",
     "versionDescription": "",
-    "checksum": "ac0a48e203337d7dd81a0d984031623f1e6aa70ef13c1b716aa9951571484c05",
+    "checksum": "a1606c803d73d16168cf1572d78c0f8931b7e598eb7aeb084b7ca32522f6c33d",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T10:00:29.994Z"
+    "syncedAt": "2026-06-22T10:03:11.290Z"
   }
 }
