@@ -38,8 +38,8 @@
         "options": {}
       },
       "position": [
-        416,
-        0
+        448,
+        -32
       ],
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1
@@ -63,9 +63,54 @@
       ],
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
       "typeVersion": 1
+    },
+    {
+      "id": "25555784-71d8-44e0-9c5f-fb032b470a3c",
+      "name": "If",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "979fb93f-0004-44df-b69b-099b8cd1827a",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        800,
+        -32
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "If",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "Edit Fields": {
       "main": [
         [
@@ -116,11 +161,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "grBNSjMsNLtanhsi",
-    "activeVersionId": "0d3ec3fc-0a33-4052-911d-852035b8ebc0",
-    "versionName": "Version 0d3ec3fc 1",
+    "activeVersionId": "0bf9cf86-ed02-42b9-aa45-d5474c8b2d03",
+    "versionName": "Version 0bf9cf86 2",
     "versionDescription": "",
-    "checksum": "98bedad5c65fc52a632fa5763196377da538dffca5072e25299d65d40e3bfe3d",
+    "checksum": "8c44dbeca463861457f6b4b7b620035c199eb2afc2b70fa88b2e93c8729b459e",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T06:56:44.261Z"
+    "syncedAt": "2026-06-22T06:57:58.650Z"
   }
 }
