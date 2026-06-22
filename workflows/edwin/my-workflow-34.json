@@ -1,0 +1,126 @@
+{
+  "name": "My workflow 34",
+  "nodes": [
+    {
+      "id": "62161938-6f7d-487c-bf89-19f721f8d50f",
+      "name": "Schedule Trigger",
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "652413d4-46fc-4f33-acf8-88a2dcc0abda",
+      "name": "Edit Fields",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        208,
+        0
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "c2fc5cc3-09a5-44a6-8770-0ec76bb1179c",
+      "name": "AI Agent",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        416,
+        0
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "credentials": {
+        "groqApi": {
+          "id": "535mhiaNdaHFFP7U",
+          "name": "Edwin"
+        }
+      },
+      "id": "42b295c3-1c7e-44b1-be56-77951e2bad67",
+      "name": "Groq Chat Model",
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "position": [
+        288,
+        208
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1
+    }
+  ],
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Edit Fields",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": [],
+  "_cortexGitSync": {
+    "instance": "n8n-automation-test3.iohealth.com",
+    "workflowId": "grBNSjMsNLtanhsi",
+    "activeVersionId": "0d3ec3fc-0a33-4052-911d-852035b8ebc0",
+    "versionName": "Version 0d3ec3fc 1",
+    "versionDescription": "",
+    "checksum": "98bedad5c65fc52a632fa5763196377da538dffca5072e25299d65d40e3bfe3d",
+    "syncedBy": "eb4005",
+    "syncedAt": "2026-06-22T06:56:44.261Z"
+  }
+}
