@@ -152,7 +152,7 @@
       },
       "position": [
         320,
-        -160
+        -256
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
@@ -254,17 +254,19 @@
     }
   },
   "meta": {},
-  "tags": [],
+  "tags": [
+    "Edwin"
+  ],
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "6PTzsC5F5dVeetpA",
-    "activeVersionId": "1a420f44-968b-4a15-b8f4-e4153696625f",
-    "versionName": "Version 1a420f44",
+    "activeVersionId": "2f747eb7-02f6-4194-b851-d391b7568450",
+    "versionName": "Version 2f747eb7 3",
     "versionDescription": "",
-    "checksum": "a1606c803d73d16168cf1572d78c0f8931b7e598eb7aeb084b7ca32522f6c33d",
+    "checksum": "92849bf8d77a33a3ae69e594a86446a7e0f7ce2d2a9dba10b4a03e92504b7649",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T10:03:11.290Z"
+    "syncedAt": "2026-06-22T10:25:46.762Z"
   }
 }
