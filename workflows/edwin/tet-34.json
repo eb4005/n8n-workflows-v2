@@ -1,5 +1,5 @@
 {
-  "name": "My workflow 34",
+  "name": "Tet 34",
   "nodes": [
     {
       "id": "db6ba805-dbd3-4304-b302-83a12efcc08e",
@@ -22,6 +22,16 @@
       "id": "a36183e7-6dc0-4e85-a1c7-cea8aabad180",
       "name": "Edit Fields",
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "faa450ae-270e-4f99-9ff8-e203981b65af",
+              "name": "",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
         "options": {}
       },
       "position": [
@@ -35,7 +45,9 @@
       "id": "b30a746b-e7e2-45b8-850e-fb74cdb5bcde",
       "name": "AI Agent",
       "parameters": {
-        "options": {}
+        "options": {},
+        "promptType": "define",
+        "text": "what is LLM"
       },
       "position": [
         -560,
@@ -105,8 +117,8 @@
         "options": {}
       },
       "position": [
-        0,
-        -32
+        32,
+        -176
       ],
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3
@@ -151,8 +163,8 @@
         "options": {}
       },
       "position": [
-        480,
-        -64
+        384,
+        -144
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
@@ -185,11 +197,34 @@
         "options": {}
       },
       "position": [
-        688,
-        -64
+        720,
+        -240
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
+    },
+    {
+      "credentials": {
+        "n8nApi": {
+          "id": "UEqEIOyu93xPXgRV",
+          "name": "n8n account"
+        }
+      },
+      "disabled": true,
+      "id": "84f64970-84ce-4c61-9690-ca0a60f66e33",
+      "name": "HTTP Request",
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "n8nApi",
+        "options": {},
+        "url": "https://n8n-automation-test3.iohealth.com/rest/workflow-history/workflow/6PTzsC5F5dVeetpA"
+      },
+      "position": [
+        224,
+        752
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4
     }
   ],
   "connections": {
@@ -224,6 +259,11 @@
             "type": "main"
           }
         ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        []
       ]
     },
     "Groq Chat Model": {
@@ -305,13 +345,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "6PTzsC5F5dVeetpA",
-    "activeVersionId": "379ac527-c531-42d9-b4fc-ec7a7809302c",
-    "versionName": "Version 379ac527",
+    "activeVersionId": "f6a8fa91-9494-4ff9-bc0e-70861b7daf25",
+    "versionName": "Version f6a8fa91 8",
     "versionDescription": "",
-    "checksum": "0f8b25a438586f3b370d13de77a1337d0e7258b97c400cafd83adf90cd9691ed",
+    "checksum": "4bb99dcb9b27e3f50420c57aab43c17ac4df83636cad692210a068b645b8c38a",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-22T12:24:28.028Z"
+    "syncedAt": "2026-06-23T10:19:41.331Z"
   }
 }
