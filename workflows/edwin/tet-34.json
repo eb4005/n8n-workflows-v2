@@ -22,6 +22,16 @@
       "id": "a36183e7-6dc0-4e85-a1c7-cea8aabad180",
       "name": "Edit Fields",
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "faa450ae-270e-4f99-9ff8-e203981b65af",
+              "name": "",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
         "options": {}
       },
       "position": [
@@ -35,7 +45,9 @@
       "id": "b30a746b-e7e2-45b8-850e-fb74cdb5bcde",
       "name": "AI Agent",
       "parameters": {
-        "options": {}
+        "options": {},
+        "promptType": "define",
+        "text": "what is LLM"
       },
       "position": [
         -560,
@@ -190,6 +202,29 @@
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
+    },
+    {
+      "credentials": {
+        "n8nApi": {
+          "id": "UEqEIOyu93xPXgRV",
+          "name": "n8n account"
+        }
+      },
+      "disabled": true,
+      "id": "84f64970-84ce-4c61-9690-ca0a60f66e33",
+      "name": "HTTP Request",
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "n8nApi",
+        "options": {},
+        "url": "https://n8n-automation-test3.iohealth.com/rest/workflow-history/workflow/6PTzsC5F5dVeetpA"
+      },
+      "position": [
+        224,
+        752
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4
     }
   ],
   "connections": {
@@ -224,6 +259,11 @@
             "type": "main"
           }
         ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        []
       ]
     },
     "Groq Chat Model": {
@@ -305,13 +345,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "6PTzsC5F5dVeetpA",
-    "activeVersionId": "3d7b862c-5bb5-4b67-8a57-17bdc068f391",
-    "versionName": "Version 3d7b862c 3",
+    "activeVersionId": "829848cf-c890-4b20-bcb5-b8ef96f359fc",
+    "versionName": "Version 829848cf 5",
     "versionDescription": "",
-    "checksum": "0c0e1d0a2861ce00f7ac53b842994f47834b3855b9d6203c949b76cec01d153a",
+    "checksum": "51c27e9e86a00aee4fcd8befc5b043a9496ebc6915dc4a54fd47580b220265cd",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-23T05:28:14.653Z"
+    "syncedAt": "2026-06-23T08:12:49.697Z"
   }
 }
