@@ -197,8 +197,8 @@
         "options": {}
       },
       "position": [
-        -48,
-        -144
+        256,
+        544
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
@@ -338,13 +338,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "WjPBEeTeV3idJC42",
-    "activeVersionId": "5b802b3c-0c3b-4e7d-b9a1-f8561b38050a",
-    "versionName": "Version 5b802b3c 2",
+    "activeVersionId": "b0894578-0a98-4fc2-8d9a-d45a2268af57",
+    "versionName": "Version b0894578 3",
     "versionDescription": "",
-    "checksum": "747e13594d3e7998f7d9cf079efe5fedf8a2c0e1d7b82e24f008f8601ef6643b",
+    "checksum": "aa1e1bdb8f164be052321cd38951123c4db3e7911b5efb6fbf529a83bd13f347",
     "active": true,
     "folder": "Edwin",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-23T10:24:30.036Z"
+    "syncedAt": "2026-06-23T10:28:07.214Z"
   }
 }
