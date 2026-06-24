@@ -183,8 +183,8 @@
       "name": "Merge",
       "parameters": {},
       "position": [
-        208,
-        -96
+        256,
+        -208
       ],
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2
@@ -347,13 +347,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "kyqOPhbUpBykfao8",
-    "activeVersionId": "468ec65f-e40c-45db-a7a1-9649285724d5",
-    "versionName": "Version 468ec65f",
+    "activeVersionId": "dd1edb81-b9fc-450d-9a1b-13ce33fd482c",
+    "versionName": "Version dd1edb81",
     "versionDescription": "",
-    "checksum": "26128b3531e6cb16f912c5e2d1a008e62b0bcd5d4177084bb3be9ba0af711b12",
+    "checksum": "bb7582f1ca7e0f43d3551203ea6b8a9809e0a9dfb914280380554ee19045fa6a",
     "active": true,
     "folder": "Edwin-2 Test",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-24T08:05:56.126Z"
+    "syncedAt": "2026-06-24T08:10:11.132Z"
   }
 }
