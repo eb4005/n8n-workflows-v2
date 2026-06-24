@@ -188,6 +188,40 @@
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
+    },
+    {
+      "id": "886527db-821f-46bf-9d9e-9582289a8e4f",
+      "name": "Filter3",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "63e0bbc8-f146-495e-b42a-af4cccd93e05",
+              "leftValue": "",
+              "operator": {
+                "name": "filter.operator.equals",
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        752,
+        -112
+      ],
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3
     }
   ],
   "connections": {
@@ -235,6 +269,17 @@
         ]
       ]
     },
+    "If": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Filter3",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "Schedule Trigger": {
       "main": [
         [
@@ -261,11 +306,11 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "zjjM9UKF2zyoJ3hR",
-    "activeVersionId": "2686842a-11ab-4ffb-a549-d46680608cda",
-    "versionName": "Version 2686842a 2",
-    "versionDescription": "SO a lot of other nodes were added and changes have been made\n",
-    "checksum": "309a3573796d1d512a77ee41afa5f9ab9b073adc20f2b469f2b014295ad54944",
+    "activeVersionId": "a40669f2-8ffe-4919-8d4a-e5c78e203ba5",
+    "versionName": "Version a40669f2 4",
+    "versionDescription": "Receives incoming support tickets via webhook, classifies each one by urgency using an AI agent, and posts high-priority tickets to the team's Slack channel while logging the rest to a tracking sheet ",
+    "checksum": "aa6093317e3d6fc7bee3cef469b211c920b3cd37439a0f8e69308bda23246ba2",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-21T19:19:05.260Z"
+    "syncedAt": "2026-06-21T19:31:21.323Z"
   }
 }
