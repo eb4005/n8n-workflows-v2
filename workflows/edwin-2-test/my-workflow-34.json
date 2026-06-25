@@ -342,18 +342,20 @@
       "recurrenceRules": []
     }
   },
-  "meta": {},
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "tags": [],
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "kyqOPhbUpBykfao8",
-    "activeVersionId": "09aeb40c-8d6d-469e-a4be-2516d0098784",
-    "versionName": "Version 09aeb40c",
+    "activeVersionId": "d200d7bf-398b-4e40-8c04-7fd61a550403",
+    "versionName": "Version d200d7bf",
     "versionDescription": "",
-    "checksum": "7722ec83687f85f334772cbb613a1214cb0a3e106619d564cf113a4d9e24ea0e",
+    "checksum": "d579298425c28b66681a28e2ea7c12483375080236c336a62cc9db0aeafab5a0",
     "active": true,
     "folder": "Edwin-2 Test",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-24T08:59:05.424Z"
+    "syncedAt": "2026-06-25T06:30:43.160Z"
   }
 }
