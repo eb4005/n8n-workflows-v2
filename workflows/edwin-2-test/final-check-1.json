@@ -81,8 +81,8 @@
         "options": {}
       },
       "position": [
-        -624,
-        432
+        -672,
+        224
       ],
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3
@@ -115,8 +115,8 @@
         "options": {}
       },
       "position": [
-        -416,
-        432
+        -368,
+        304
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
@@ -128,8 +128,8 @@
         "options": {}
       },
       "position": [
-        -384,
-        64
+        -416,
+        -48
       ],
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3
@@ -218,8 +218,8 @@
       "name": "Merge1",
       "parameters": {},
       "position": [
-        0,
-        544
+        16,
+        656
       ],
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2
@@ -366,13 +366,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "CG4MrZqlJE00OyBd",
-    "activeVersionId": "f744c8b6-6bfe-4a96-8da7-272d4d9b08bc",
-    "versionName": "Version f744c8b6",
+    "activeVersionId": "2e6c4fde-0867-4b62-b329-c0e0236f1079",
+    "versionName": "Version 2e6c4fde",
     "versionDescription": "",
-    "checksum": "2af780c3c8148b9a8f346f66da9b1f92919fd25ab604590833b091de989646e4",
+    "checksum": "6a8eff3c19d478853941dcc31dc3224869e33b12e5e0099e64f6093d7c879d54",
     "active": true,
     "folder": "Edwin-2 Test",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-29T09:04:00.866Z"
+    "syncedAt": "2026-06-29T09:16:37.895Z"
   }
 }
