@@ -135,18 +135,6 @@
       "typeVersion": 3
     },
     {
-      "id": "dce52828-f460-4f9f-977d-0859a2b1a59b",
-      "name": "Replace Me",
-      "parameters": {},
-      "placeholder": true,
-      "position": [
-        0,
-        544
-      ],
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1
-    },
-    {
       "id": "cd4e0498-0815-4d8e-9af8-c3c848516103",
       "name": "If1",
       "parameters": {
@@ -224,6 +212,30 @@
       ],
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3
+    },
+    {
+      "id": "81267354-8864-4b9b-8af5-cf783841c928",
+      "name": "Merge1",
+      "parameters": {},
+      "position": [
+        0,
+        544
+      ],
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2
+    },
+    {
+      "id": "f538ba88-17b2-42c1-9a31-e72844d1b2e8",
+      "name": "Edit Fields",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        496,
+        512
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
     }
   ],
   "connections": {
@@ -295,7 +307,7 @@
         [
           {
             "index": 0,
-            "node": "Replace Me",
+            "node": "Merge1",
             "type": "main"
           }
         ]
@@ -312,12 +324,17 @@
         ]
       ]
     },
-    "Replace Me": {
+    "Merge1": {
       "main": [
         [
           {
             "index": 0,
             "node": "Loop Over Items",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Edit Fields",
             "type": "main"
           }
         ]
@@ -349,13 +366,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "CG4MrZqlJE00OyBd",
-    "activeVersionId": "3814e00a-b71f-4073-b479-0affa832ad8e",
-    "versionName": "Version 3814e00a",
+    "activeVersionId": "f744c8b6-6bfe-4a96-8da7-272d4d9b08bc",
+    "versionName": "Version f744c8b6",
     "versionDescription": "",
-    "checksum": "cf4d49eb15ecfd12532ec76c0f4c0216dcd136fbdddb801d8016c587f4c36003",
+    "checksum": "2af780c3c8148b9a8f346f66da9b1f92919fd25ab604590833b091de989646e4",
     "active": true,
     "folder": "Edwin-2 Test",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-29T09:00:25.899Z"
+    "syncedAt": "2026-06-29T09:04:00.866Z"
   }
 }
