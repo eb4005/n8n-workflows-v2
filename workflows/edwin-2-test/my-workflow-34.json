@@ -22,7 +22,9 @@
       "id": "209fb318-6d43-4014-93fb-dbc8d3bb8b36",
       "name": "AI Agent",
       "parameters": {
-        "options": {}
+        "options": {},
+        "promptType": "define",
+        "text": "Hello what does this workflow do ?"
       },
       "position": [
         -976,
@@ -349,13 +351,13 @@
   "_cortexGitSync": {
     "instance": "n8n-automation-test3.iohealth.com",
     "workflowId": "kyqOPhbUpBykfao8",
-    "activeVersionId": "d200d7bf-398b-4e40-8c04-7fd61a550403",
-    "versionName": "Version d200d7bf",
+    "activeVersionId": "6d35cd75-862f-426b-9199-ef03f9d8726c",
+    "versionName": "Version 6d35cd75",
     "versionDescription": "",
-    "checksum": "d579298425c28b66681a28e2ea7c12483375080236c336a62cc9db0aeafab5a0",
+    "checksum": "677e9f7a85196765ce38366c4ec7aea6a6966b292f43bbcdeb2ce4ff9fdbdf25",
     "active": true,
     "folder": "Edwin-2 Test",
     "syncedBy": "eb4005",
-    "syncedAt": "2026-06-25T06:30:43.160Z"
+    "syncedAt": "2026-06-29T07:14:59.570Z"
   }
 }
